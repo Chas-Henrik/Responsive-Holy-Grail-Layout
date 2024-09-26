@@ -13,6 +13,14 @@ html {
     font-size: 26px;
 }
 
+.container {
+    width: 100vw;
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .container * {
     width: 100vw;
     border-radius: 10px;
@@ -26,7 +34,7 @@ header, footer, main > * {
 }
 
 .container > header {
-    height: 20svh;
+    flex: 1;
     background-color: #3C507C;
     display: flex;
     justify-content: space-between;
@@ -34,49 +42,64 @@ header, footer, main > * {
 }
 
 .container > header > a {
-    text-align: center;
     width: fit-content;
 }
 
+.container > main {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container > footer {
+    flex: 1;
+    background-color: #3C507A;
+}
+
 .container > main > section {
-    height: 40svh;
+    flex: 4;
     background-color: #EED46B;
 }
 
 .container > main > nav {
-    height: 10svh;
+    flex: 1;
     background-color: #75C795;
 }
 
 .container > main > aside {
-    height: 10svh;
+    flex: 1;
     background-color: #CE486F;
-}
-
-.container > footer {
-    height: 20svh;
-    background-color: #3C507A;
 }
 
 
 /* On screens that are 600px or more */
 @media only screen and (min-width: 600px)  {
+    .container > header {
+        flex: 1;
+    }
     .container > main {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         gap: 10px;
+        flex: 4;
+    }
+    .container > footer {
+        flex: 1;
     }
     .container > main > section {
         order: 2;
-        height: 60svh;
+        flex: 3;
     }
     .container > main > nav {
         order: 1;
-        height: 60svh;
+        flex: 1;
     }
     .container > main > aside {
         order: 3;
-        height: 60svh;
+        flex: 1;
     }
 }
